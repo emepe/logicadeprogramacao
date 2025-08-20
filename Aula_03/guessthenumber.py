@@ -21,7 +21,7 @@ while True:
             print("\n\nMuito alto, tente um número menor...")
 
         else:
-            print("\n\nMuito baixo, tente um número maior...")
+            print("\n\nMuito baixo, tente um número maior....")
 
         numero = int(input(perguntaNumero))
 

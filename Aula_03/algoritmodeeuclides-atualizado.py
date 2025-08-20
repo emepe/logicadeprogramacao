@@ -13,6 +13,6 @@ while numero1 != numero2:
 
 print(f"\nPrimeiro número: {numero1}\nSegundo número: {numero2}")
     
-    
+    # sdfdsf
 
 
