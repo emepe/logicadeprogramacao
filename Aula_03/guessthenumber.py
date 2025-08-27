@@ -5,6 +5,7 @@ perguntaNumero = "\nDigite um número de 0 a 100:\n\nR.: "
 recorde = 101
 
 while True:
+    palpitesPassados = []
     numeroTentativas = 1
 
     nome = input(perguntaNome)
@@ -15,19 +16,28 @@ while True:
     numeroAleatorio = random.randint(0,100)
 
     while numero != numeroAleatorio:
-        numeroTentativas += 1 #numero_tentativas = numero_tentativas + 1
 
-        if numero > numeroAleatorio:  
-            print("\n\nMuito alto, tente um número menor...")
+        if numero in palpitesPassados:
+            print("Esse numero já foi...")
 
         else:
-            print("\n\nMuito baixo, tente um número maior....")
+            palpitesPassados.append(numero)
+        
+            numeroTentativas += 1 #numero_tentativas = numero_tentativas + 1
+            
 
-        numero = int(input(perguntaNumero))
+            if numero > numeroAleatorio:  
+                    print("\n\nMuito alto, tente um número menor...")
+
+            else:
+                    print("\n\nMuito baixo, tente um número maior....")
+
+    numero = int(input(perguntaNumero))
 
     if numeroTentativas < recorde:
         recorde = numeroTentativas
 
 
-    print(f"\nAcertoooouuu!!! Conseguiu em {numeroTentativas} tentativas!\n\n O seu recorde até você dar F5 é {recorde}")
+    print(f"\nAcertoooouuu!!! Conseguiu em {numeroTentativas} tentativas!\n\nO seu recorde, até você dar F5, é de {recorde} tentativas!")
+
 
